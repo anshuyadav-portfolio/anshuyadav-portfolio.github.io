@@ -129,7 +129,7 @@ export default function Navigation() {
       >
         <div
           className={cn(
-            "pointer-events-auto flex items-center justify-between gap-8 px-6 py-3 rounded-full bg-white/5 backdrop-blur-xl border transition-colors duration-300 w-full md:w-fit",
+            "pointer-events-auto flex items-center justify-between gap-8 px-6 py-3 rounded-full bg-neutral-950/90 backdrop-blur-xl border transition-colors duration-300 w-full md:w-fit",
             scrolled ? "border-white/20" : "border-white/5"
           )}
         >

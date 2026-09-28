@@ -7,14 +7,14 @@ export default function About() {
   return (
     <section
       id="about"
-      className="mx-auto flex max-w-6xl flex-col justify-center px-6 py-16 md:px-12 md:py-32"
+      className="bg-white px-6 py-16 text-neutral-950 md:px-12 md:py-32"
     >
-      <div className="max-w-2xl">
-        <SectionLabel number="02">About</SectionLabel>
-        <h2 className="mt-6 text-3xl font-light tracking-tight text-white md:text-5xl">
+      <div className="mx-auto max-w-6xl">
+        <SectionLabel number="02" className="text-neutral-500">About</SectionLabel>
+        <h2 className="mt-6 max-w-2xl text-3xl font-light tracking-tight text-neutral-950 md:text-5xl">
           The Story Behind Anshu Yadav
         </h2>
-        <div className="mt-6 max-w-2xl text-lg leading-relaxed text-text-muted">
+        <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-neutral-600">
           <p>
             Anshu Yadav works with brands that have something to say but need the right way to say it.
           </p>
@@ -40,7 +40,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="w-fit rounded-full border border-border bg-surface px-4 py-2 font-mono text-sm text-text-muted"
+              className="w-fit rounded-full border border-black/10 bg-neutral-100 px-4 py-2 font-mono text-sm text-neutral-600"
             >
               {item}
             </motion.div>

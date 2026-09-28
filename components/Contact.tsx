@@ -5,10 +5,8 @@ import { motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BsEnvelope, BsLinkedin } from "react-icons/bs";
 import SectionLabel from "./ui/SectionLabel";
 import Badge from "./ui/Badge";
-import MagneticButton from "./ui/MagneticButton";
 import { personalInfo } from "@/data/content";
 
 export default function Contact() {
@@ -99,31 +97,6 @@ export default function Contact() {
             Copied!
           </motion.div>
         </button>
-      </div>
-
-      <div className="mt-12 flex justify-center gap-6">
-        <MagneticButton strength={0.3}>
-          <a
-            href={`mailto:${personalInfo.email}`}
-            className="border border-border rounded-full p-5 md:p-4 flex items-center justify-center hover:bg-white/5 hover:border-white/20 transition-colors text-text-muted hover:text-white"
-            data-cursor="hover"
-            aria-label="Email Anshu Yadav"
-          >
-            <BsEnvelope size={20} />
-          </a>
-        </MagneticButton>
-        <MagneticButton strength={0.3}>
-          <a
-            href={personalInfo.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="border border-border rounded-full p-5 md:p-4 flex items-center justify-center hover:bg-white/5 hover:border-white/20 transition-colors text-text-muted hover:text-white"
-            data-cursor="hover"
-            aria-label="LinkedIn"
-          >
-            <BsLinkedin size={20} />
-          </a>
-        </MagneticButton>
       </div>
 
       <div className="mt-12">
