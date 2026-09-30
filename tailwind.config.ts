@@ -21,8 +21,8 @@ const config: Config = {
         glow: "rgba(255,255,255,0.06)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        sans: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        mono: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
       },
       screens: {
         "3xl": "1920px",

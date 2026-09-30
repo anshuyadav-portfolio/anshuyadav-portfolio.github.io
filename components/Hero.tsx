@@ -4,8 +4,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import MagneticButton from "./ui/MagneticButton";
-import { useLenisContext } from "@/providers/LenisProvider";
 
 const HeroScene = dynamic(() => import("./three/HeroScene"), { ssr: false });
 
@@ -14,9 +12,6 @@ export default function Hero() {
   const headline1Ref = useRef<HTMLHeadingElement>(null);
   const headline2Ref = useRef<HTMLHeadingElement>(null);
   const sublineRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
-  const lenis = useLenisContext();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -41,13 +36,6 @@ export default function Hero() {
         );
       }
 
-      if (ctaRef.current) {
-        gsap.fromTo(
-          ctaRef.current.children,
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, delay: 3.2, ease: "power2.out" }
-        );
-      }
     }, containerRef);
 
     return () => ctx.revert();
@@ -65,15 +53,6 @@ export default function Hero() {
     ));
   };
 
-  const scrollToWork = () => {
-    if (lenis) {
-      lenis.scrollTo("#projects", { offset: -80 });
-    } else {
-      const el = document.getElementById("projects");
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       ref={containerRef}
@@ -86,22 +65,6 @@ export default function Hero() {
         <HeroScene />
       </div>
 
-      <div
-        className="absolute left-6 top-28 z-20 flex items-center text-white sm:left-10 md:left-12 xl:left-[6vw] xl:top-6"
-        aria-label="Anshu Yadav"
-      >
-        <span className="relative block h-11 w-14 shrink-0 overflow-hidden" aria-hidden="true">
-          <img
-            src="/anshu-monogram-transparent.png"
-            alt=""
-            className="absolute left-1/2 top-1/2 h-14 w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-contain grayscale invert"
-          />
-        </span>
-        <span className="ml-3 text-[0.78rem] font-semibold tracking-[0.3em] text-white sm:text-[0.86rem]">
-          ANSHU YADAV
-        </span>
-      </div>
-
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-20 md:px-12 md:pt-0 flex flex-col justify-center h-full">
 
         <p className="mb-5 font-mono text-[0.68rem] font-medium uppercase tracking-[0.3em] text-white/45 md:mb-7 md:text-xs">
@@ -112,7 +75,7 @@ export default function Hero() {
           <h1
             ref={headline1Ref}
             className="mb-1 text-[2.55rem] font-normal leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-[5.5rem]"
-            style={{ fontFamily: "Georgia, 'Times New Roman', serif", perspective: "1000px" }}
+            style={{ perspective: "1000px" }}
           >
             {renderSplitText("Stories that")}
             <span className="inline-block italic text-white/70">
@@ -122,7 +85,7 @@ export default function Hero() {
           <h2
             ref={headline2Ref}
             className="text-[2.55rem] font-normal leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-[5.5rem]"
-            style={{ fontFamily: "Georgia, 'Times New Roman', serif", perspective: "1000px" }}
+            style={{ perspective: "1000px" }}
           >
             {renderSplitText("Content that")}
             <span className="inline-block italic text-white/70">
@@ -137,20 +100,6 @@ export default function Hero() {
         >
           I help brands turn ideas into scroll-stopping content and meaningful communities through strategy, creativity, and data-driven storytelling.
         </p>
-
-        <div ref={ctaRef} className="mt-10 flex flex-col sm:flex-row gap-3 md:gap-4 relative z-20 w-full max-w-sm sm:max-w-xs md:max-w-none mx-auto md:mx-0">
-          <div className="opacity-0 w-full md:w-auto">
-            <MagneticButton strength={0.2}>
-              <button
-                onClick={scrollToWork}
-                className="w-full bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-white/90 transition-colors"
-                data-cursor="hover"
-              >
-                Explore Services ↓
-              </button>
-            </MagneticButton>
-          </div>
-        </div>
 
       </div>
 

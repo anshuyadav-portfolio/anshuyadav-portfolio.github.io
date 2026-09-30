@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { label: "Services", id: "projects" },
   { label: "About", id: "about" },
   { label: "Capabilities", id: "skills" },
-  { label: "Process", id: "timeline" },
   { label: "Contact", id: "contact" },
 ];
 

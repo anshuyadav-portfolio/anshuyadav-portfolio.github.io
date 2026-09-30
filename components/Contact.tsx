@@ -48,7 +48,7 @@ export default function Contact() {
       ref={containerRef}
       className="min-h-[70vh] flex flex-col items-center justify-center py-16 md:py-32 px-6 text-center border-t border-border relative z-10"
     >
-      <SectionLabel number="05">Contact</SectionLabel>
+      <SectionLabel number="04">Contact</SectionLabel>
 
       <div ref={headlineRef} className="mt-6 flex flex-col items-center gap-2">
         <h2 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white flex flex-wrap justify-center gap-[0.2em]">

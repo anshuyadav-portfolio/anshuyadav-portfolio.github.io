@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${GeistSans.variable} ${GeistMono.variable} bg-background text-text-primary antialiased relative`}
-      >
+      <body className="relative bg-background text-text-primary antialiased">
         <div
           className="fixed inset-0 pointer-events-none z-[200] opacity-[0.025]"
           style={{
